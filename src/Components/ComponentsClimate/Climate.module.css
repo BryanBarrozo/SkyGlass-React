@@ -1,0 +1,13 @@
+
+.all_cards{
+    height: 40%;
+    width: 100%;
+
+    display: grid;
+    gap: 20px;
+}
+.row_cards{
+    display: flex;
+    gap: 28px;
+}
+

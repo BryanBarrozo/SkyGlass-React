@@ -1,0 +1,33 @@
+.card{
+    width: 30%;
+    height: 140px;
+
+    display: grid;
+
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%,rgba(255, 255, 255, 0.05) 100%);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    padding: 20px;
+}
+
+.card div{
+    display: flex;
+    gap: 10px;
+}
+.card div .icon{
+    font-size: 20px;
+    
+}
+.card div h2{
+    font-size: 18px;
+    font-weight: 600;
+}
+.card h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+

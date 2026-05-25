@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+    cursor: default;
+
+    background: linear-gradient(to bottom, #1a2a44,#0b1326
+    );  
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 600px;
+    height: 600px;
+
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
+
+    filter: blur(60px);
+    z-index: -1;
+}
+#root{
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+}
+main{
+    height: 100vh;
+    width: 80%;
+
+    display: grid;
+    align-content: start;
+
+    background-color: transparent;
+
+    gap: 28px;
+    padding-left: 15px;
+}
