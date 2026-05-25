@@ -9,11 +9,10 @@ import HeaderMain from './Components/ComponentsMain/HeaderMain'
 import MainClimate from './Components/ComponentsMain/MainClimate'
 import Forecast from './Components/ComponetsForecast/Forecast'
 import Climate from './Components/ComponentsClimate/Climate'
+
+
 function App() {
   
-
-
-
 
   return (
     <>
