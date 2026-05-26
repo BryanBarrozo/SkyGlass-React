@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './CardClimate.module.css'
 
-function CardClimate({icon, infoName,infoType}){
+function CardClimate({icon, infoName,infoNumber, infoType}){
     return(
         
         <div className={styles.card}>
@@ -9,7 +9,7 @@ function CardClimate({icon, infoName,infoType}){
                 <FontAwesomeIcon icon={icon} className={styles.icon}/>
                 <h2>{infoName}</h2>
             </div>
-            <h3>Informação{infoType}</h3>
+            <h3>{infoNumber}{infoType}</h3>
         </div>
         )
 }

@@ -1,11 +1,11 @@
 import styles from './CardForecast.module.css'
 
-function CardForecast(){
+function CardForecast({time, icon, temp}){
     return(
         <div className={styles.card}>
-            <h2>Hora</h2>
-            <img src="" alt="Weather icon forecast"/>
-            <h3>30C</h3>
+            <h2>{time}</h2>
+            <img src={icon} alt="Weather icon forecast"/>
+            <h3>{temp}°C</h3>
         </div>
     )
 }

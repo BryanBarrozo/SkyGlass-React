@@ -12,36 +12,28 @@ import {faBell} from '@fortawesome/free-regular-svg-icons'
 import SuggestionsCard from './SuggestionsCard'
 import styles from './HeaderMain.module.css'
 
-import {useState} from "react"
 
+import {useState ,useContext} from "react"
 
-
+import { VariablesContext } from '../../context/VariablesContext'
 
 
 function HeaderMain(){
+    const { cityResult, setCityResult, apiKey } = useContext(VariablesContext)
 
-    const apiKey = "688c0777584fd7164ff2dfe24c5ad896"
-
-    const [city ,setCity] = useState()
     const [suggestion, setSuggestion] = useState([])
+    const [city, setCity] = useState("")
+    
 
     async function SearchCity(e){
 
-            setCity(e.target.value)
-            const value = e.target.value
+        setCity(e.target.value)
+        
+        const value = e.target.value
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=3&appid=${apiKey}`);
+        const data = await response.json()
 
-            const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=3&appid=${apiKey}`);
-            const data = await response.json()
-
-            console.log(city)
-            console.log(data)
-            setSuggestion(data)
-
-            console.log(data[0]?.local_names?.en || suggestion[0]?.name)
-            console.log(data[0]?.country)
-            console.log(data[1]?.local_names?.en || suggestion[1]?.name)
-            console.log(data[2]?.local_names?.en || suggestion[2]?.name)
-            
+        setSuggestion(data)
         }
 
 
@@ -52,17 +44,51 @@ function HeaderMain(){
                     <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.faGlass}/>
                     <input 
                     onChange={SearchCity}
-                    name='city'
+                    value={city}
                     type='text' 
                     placeholder='Search for cities...'
                     />
                 </div>
                 <div className={styles.suggestions}>
-                    {suggestion.length > 0 &&(
+                    {suggestion.length > 0 &&(//trocar, usar map
                         <>
-                        <SuggestionsCard city={suggestion[0]?.local_names?.en} country={suggestion[0]?.country}/>
-                        <SuggestionsCard city={suggestion[1]?.local_names?.en} country={suggestion[1]?.country}/>
-                        <SuggestionsCard city={suggestion[2]?.local_names?.en} country={suggestion[2]?.country}/>
+                        <SuggestionsCard
+                        onClick={
+                            () => {
+                                setCityResult(suggestion[0]?.name)
+                                setCity("")
+                                setSuggestion([])
+                            }
+                            
+                        }
+                        city={suggestion[0]?.local_names?.en} 
+                        country={suggestion[0]?.country}
+                        />
+
+                        <SuggestionsCard 
+                        onClick={
+                            () => {
+                                setCityResult(suggestion[0]?.name)
+                                setCity("")
+                                setSuggestion([])
+                            }
+                            
+                        }
+                        city={suggestion[1]?.local_names?.en} 
+                        country={suggestion[1]?.country}
+                        />
+
+                        <SuggestionsCard 
+                        onClick={
+                            () => {
+                                setCityResult(suggestion[0]?.name)
+                                setCity("")
+                                setSuggestion([])
+                            }
+                        }
+                        city={suggestion[2]?.local_names?.en} 
+                        country={suggestion[2]?.country}
+                        />
                         </>
                     ) }
                 </div>

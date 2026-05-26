@@ -1,8 +1,8 @@
 import styles from "./SuggestionsCard.module.css"
 
-function Suggestions({city, country}){
+function Suggestions({city, country, onClick}){
     return(
-        <div className={styles.card}>
+        <div onClick={onClick}   className={styles.card}>
             <h2>{city} {country}</h2>
         </div>
     )

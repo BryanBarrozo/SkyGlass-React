@@ -2,8 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 
+import { VariablesProvider } from "./context/VariablesContext.jsx";
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <VariablesProvider>
+      <App />
+    </VariablesProvider>
   </StrictMode>,
 )
