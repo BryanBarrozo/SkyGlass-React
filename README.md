@@ -1,16 +1,47 @@
-# React + Vite
+Weather Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web de previsão do tempo desenvolvida com React utilizando a API da OpenWeather.
 
-Currently, two official plugins are available:
+Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O projeto permite:
 
-## React Compiler
+Buscar cidades em tempo real
+Exibir sugestões de cidades enquanto o usuário digita
+Mostrar informações climáticas atuais
+Exibir previsão das próximas horas
+Interface moderna utilizando React + CSS Modules
+Tecnologias Utilizadas
+React
+JavaScript
+Context API
+CSS Modules
+OpenWeather API
+Font Awesome
+Vite
+Funcionalidades
+Busca dinâmica de cidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Enquanto o usuário digita, a aplicação consulta a API de geolocalização da OpenWeather e mostra sugestões de cidades.
 
-## Expanding the ESLint configuration
+Clima atual
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Exibe:
+
+Temperatura atual
+Temperatura máxima e mínima
+Sensação térmica
+Umidade
+Velocidade do vento
+Pressão atmosférica
+Visibilidade
+Nível do mar
+Descrição do clima
+Ícone climático
+Previsão de 24 horas
+
+Mostra:
+
+Horário
+Temperatura
+Ícone climático
