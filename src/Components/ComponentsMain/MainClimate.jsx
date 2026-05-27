@@ -12,6 +12,8 @@ function MainClimate(){
 
     const { cityResult, setCityResult, apiKey , weatherData, setWeatherData, dataForecast, setDataForecast} = useContext(VariablesContext)
 
+    
+
     useEffect(() => {
 
         async function weather() { 
