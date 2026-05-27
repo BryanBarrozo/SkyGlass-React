@@ -3,7 +3,7 @@ import CardForecast from "./CardForecast"
 import styles from "./Forecast.module.css"
 
 import {useContext} from "react"
-import { VariablesContext } from '../../context/VariablesContext'
+import { VariablesContext } from '../../Context/VariablesContext'
 
 function Forecast(){
 

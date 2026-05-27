@@ -5,7 +5,7 @@ import {faLocationDot} from '@fortawesome/free-solid-svg-icons'
 import styles from './MainClimate.module.css'
 
 import {useState, useContext, useEffect} from 'react'
-import { VariablesContext } from '../../context/VariablesContext'
+import { VariablesContext } from '../../Context/VariablesContext'
 import { getWeather, getWeatherForecast} from '../../Services/Api'
 
 function MainClimate(){

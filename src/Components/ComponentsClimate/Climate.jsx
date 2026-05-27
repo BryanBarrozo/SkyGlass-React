@@ -13,7 +13,7 @@ import{
 } from '@fortawesome/free-solid-svg-icons'
 
 import {useState, useContext} from 'react'
-import { VariablesContext } from '../../context/VariablesContext'
+import { VariablesContext } from '../../Context/VariablesContext'
 
 
 function Climate(){

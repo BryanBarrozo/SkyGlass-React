@@ -15,7 +15,7 @@ import styles from './HeaderMain.module.css'
 
 import {useState ,useContext} from "react"
 
-import { VariablesContext } from '../../context/VariablesContext'
+import { VariablesContext } from '../../Context/VariablesContext'
 
 
 function HeaderMain(){
