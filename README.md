@@ -1,20 +1,33 @@
 # Weather Dashboard
 
-Aplicação web de previsão do tempo desenvolvida com React utilizando a API da OpenWeather.
+A modern weather dashboard built with React using the OpenWeather API.
 
 ## Preview
 
-O projeto permite:
+<p align="center">
+  <img width="1405" height="683" alt="weather app" src="https://github.com/user-attachments/assets/cf261e97-620b-425f-8faa-fe1190ccfde4" />
+</p>
 
-* Buscar cidades em tempo real
-* Exibir sugestões de cidades enquanto o usuário digita
-* Mostrar informações climáticas atuais
-* Exibir previsão das próximas horas
-* Interface moderna utilizando React + CSS Modules
+<p align="center">
+  <img width="386" height="245" alt="weather" src="https://github.com/user-attachments/assets/d016d9f3-3837-4caa-adea-31aa11efa80c" />
+</p>
 
 ---
 
-# Tecnologias Utilizadas
+# Features
+
+The application allows users to:
+
+* Search cities in real time
+* Display city suggestions while typing
+* Show current weather information
+* Display a 24-hour weather forecast
+* Save the last searched city using Local Storage
+* Responsive and modern UI built with React + CSS Modules
+
+---
+
+# Technologies Used
 
 * React
 * JavaScript
@@ -23,36 +36,51 @@ O projeto permite:
 * OpenWeather API
 * Font Awesome
 * Vite
+* Local Storage
 
 ---
 
-# Funcionalidades
+# Functionalities
 
-## Busca dinâmica de cidades
+## Dynamic city search
 
-Enquanto o usuário digita, a aplicação consulta a API de geolocalização da OpenWeather e mostra sugestões de cidades.
+While the user types, the application requests the OpenWeather Geolocation API and displays city suggestions in real time.
 
-## Clima atual
+---
 
-Exibe:
+## Current weather
 
-* Temperatura atual
-* Temperatura máxima e mínima
-* Sensação térmica
-* Umidade
-* Velocidade do vento
-* Pressão atmosférica
-* Visibilidade
-* Nível do mar
-* Descrição do clima
-* Ícone climático
+Displays:
 
-## Previsão de 24 horas
+* Current temperature
+* Maximum and minimum temperature
+* Feels like temperature
+* Humidity
+* Wind speed
+* Atmospheric pressure
+* Visibility
+* Sea level
+* Weather description
+* Weather icon
 
-Mostra:
+---
 
-* Horário
-* Temperatura
-* Ícone climático
+## 24-hour forecast
 
+Displays:
 
+* Time
+* Temperature
+* Weather icon
+
+---
+
+## Local Storage
+
+The application stores the last selected city in the browser using Local Storage, allowing the weather data to persist even after refreshing or reopening the page.
+
+---
+
+# Deploy
+
+https://teal-hamster-bc9aec.netlify.app/
