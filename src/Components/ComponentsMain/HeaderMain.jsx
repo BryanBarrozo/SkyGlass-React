@@ -22,18 +22,23 @@ function HeaderMain(){
     const { cityResult, setCityResult, apiKey } = useContext(VariablesContext)
 
     const [suggestion, setSuggestion] = useState([])
-    const [city, setCity] = useState("")
+    const [cityInput, setCityInput] = useState("")
     
 
     async function SearchCity(e){
 
-        setCity(e.target.value)
+        setCityInput(e.target.value)
         
         const value = e.target.value
         const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=3&appid=${apiKey}`);
         const data = await response.json()
 
-        setSuggestion(data)
+        const newData = data.slice(0,3).map((item) =>({
+            city: item.local_names?.en || item.name,
+            country: item.country,
+        }))
+
+        setSuggestion(newData)
         }
 
 
@@ -44,53 +49,30 @@ function HeaderMain(){
                     <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.faGlass}/>
                     <input 
                     onChange={SearchCity}
-                    value={city}
+                    value={cityInput}
                     type='text' 
                     placeholder='Search for cities...'
                     />
                 </div>
                 <div className={styles.suggestions}>
-                    {suggestion.length > 0 &&(//trocar, usar map
-                        <>
-                        <SuggestionsCard
-                        onClick={
-                            () => {
-                                setCityResult(suggestion[0]?.name)
-                                setCity("")
-                                setSuggestion([])
-                            }
-                            
-                        }
-                        city={suggestion[0]?.local_names?.en} 
-                        country={suggestion[0]?.country}
-                        />
+                    {suggestion.length > 0 &&(
 
-                        <SuggestionsCard 
-                        onClick={
-                            () => {
-                                setCityResult(suggestion[0]?.name)
-                                setCity("")
-                                setSuggestion([])
-                            }
-                            
-                        }
-                        city={suggestion[1]?.local_names?.en} 
-                        country={suggestion[1]?.country}
-                        />
+                        suggestion.map((item, index)=>{
+                            return(
+                                <SuggestionsCard
+                                onClick={()=>{
+                                    setCityResult(item.city);
+                                    setSuggestion("");
+                                    setCityInput("")
+                                }}
+                                key={index}
+                                city={item.city}
+                                country={item.country}
+                                />
+                            )
+                        })  
 
-                        <SuggestionsCard 
-                        onClick={
-                            () => {
-                                setCityResult(suggestion[0]?.name)
-                                setCity("")
-                                setSuggestion([])
-                            }
-                        }
-                        city={suggestion[2]?.local_names?.en} 
-                        country={suggestion[2]?.country}
-                        />
-                        </>
-                    ) }
+                    )}
                 </div>
             </div>
 
